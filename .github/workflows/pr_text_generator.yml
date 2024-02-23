@@ -11,12 +11,12 @@ jobs:
         - name: Run Auto PR on initial open PR
           if: github.event_name == 'pull_request'
           id: auto_pr_for_pr
-          uses: vblagoje/auto-pr@v1
+          uses: vblagoje/auto-pr@main
           with:
             openai_api_key: ${{ secrets.OPENAI_API_KEY }}
             user_prompt: ${{ github.event.pull_request.body }}
 
         - name: Update PR description
-          uses: vblagoje/update-pr@v1
+          uses: vblagoje/update-pr@main
           with:
             pr-body: ${{ steps.auto_pr_for_pr.outputs.generated_pr_text }}
