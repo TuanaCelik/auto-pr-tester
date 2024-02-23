@@ -19,4 +19,4 @@ jobs:
         - name: Update PR description
           uses: vblagoje/update-pr@main
           with:
-            pr-body: ${{ steps.auto_pr_for_pr.outputs.generated_pr_text }}
+            pr-body: ${{ steps.auto_pr_for_pr.outputs.pr-text }} 
